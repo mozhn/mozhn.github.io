@@ -1,10 +1,9 @@
-name: github pages
+name: hugo publish
 
 on:
   push:
     branches:
       - master  # Set a branch to deploy
-  pull_request:
 
 jobs:
   deploy:
@@ -12,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          submodules: true
+          fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -29,4 +28,5 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: master
           publish_dir: ./public
