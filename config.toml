@@ -2,6 +2,7 @@ baseURL = "https://mazlumozhan.dev/"
 languageCode = "tr-tr"
 title = "Mazlum Özhan"
 theme = "paper"
+googleAnalytics = "G-QLF1P68R96"
 
 [params]
   github = 'mozhn'
