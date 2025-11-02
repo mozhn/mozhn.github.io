@@ -1,20 +1,48 @@
 baseURL = "https://mozhn.dev/"
-languageCode = "tr-tr"
-title = "Mazlum Özhan "
 theme = "paper"
 googleAnalytics = "G-QLF1P68R96"
+defaultContentLanguage = "tr"
+
+[languages]
+  [languages.tr]
+    languageCode = "tr-TR"
+    languageName = "Türkçe"
+    title = "Mazlum Özhan"
+    weight = 1
+
+    [languages.tr.params]
+      github = 'mozhn'
+
+    [[languages.tr.menu.main]]
+      identifier = ''
+      name = 'Blog'
+      url = '/'
+      weight = -110
+    [[languages.tr.menu.main]]
+      identifier = 'about'
+      name = 'Hakkımda'
+      url = '/about/'
+      weight = -100
+
+  [languages.en]
+    languageCode = "en-US"
+    languageName = "English"
+    title = "Mazlum Özhan"
+    weight = 2
+
+    [languages.en.params]
+      github = 'mozhn'
+
+    [[languages.en.menu.main]]
+      identifier = ''
+      name = 'Blog'
+      url = '/en/'
+      weight = -110
+    [[languages.en.menu.main]]
+      identifier = 'about'
+      name = 'About'
+      url = '/en/about/'
+      weight = -100
 
 [params]
   github = 'mozhn'
-
-[menu]
-  [[menu.main]]
-  identifier = ''
-  name = 'Blog'
-  url = '/'
-  weight = -110
-  [[menu.main]]
-  identifier = 'about'
-  name = 'Hakkımda'
-  url = '/about/'
-  weight = -100
