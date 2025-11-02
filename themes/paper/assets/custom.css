@@ -4,9 +4,9 @@
   display: flex !important;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
-  width: 1.25rem;
-  height: 1.25rem;
+  font-size: 2.5rem;
+  width: 3rem;
+  height: auto;
 }
 
 .btn-dark::before {
@@ -15,4 +15,17 @@
 
 body.dark .btn-dark::before {
   content: "🌙";
+}
+
+.site-name {
+  max-width: unset !important;
+  overflow: visible !important;
+}
+
+.menu a {
+  opacity: 0.44;
+}
+
+.menu a.active {
+  opacity: 1 !important;
 }

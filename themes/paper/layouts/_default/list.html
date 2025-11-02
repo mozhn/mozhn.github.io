@@ -34,7 +34,7 @@
 {{ $paginator := .Paginate $pages }} {{ range $index, $page := $paginator.Pages }}
 <article class="post-entry">
   <h2>{{ .Title }}</h2>
-  <time>{{ .Date.Format "January 2, 2006" }}</time>
+  <time>{{ if eq .Language.Lang "tr" }}{{ .Date.Format "02.01.2006" }}{{ else }}{{ .Date.Format "January 2, 2006" }}{{ end }}</time>
   <a href="{{ .Permalink }}"></a>
 </article>
 {{ end }}
