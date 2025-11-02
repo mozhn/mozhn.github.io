@@ -46,17 +46,88 @@
       target="_blank"
     ></a>
     {{ end }}
-    <!-- Language Switcher -->
+    <!-- Language Switcher Dropdown -->
     {{ if $.IsTranslated }}
-      {{ range $.Translations }}
-      <a
-        class="language-switcher"
-        href="{{ .RelPermalink }}"
-        title="Switch to {{ .Language.LanguageName }}"
-        style="font-size: 1.5em; text-decoration: none; display: inline-block;"
-      >{{ if eq .Language.Lang "tr" }}🇹🇷{{ else if eq .Language.Lang "en" }}🇬🇧{{ end }}</a>
-      {{ end }}
+    <div class="language-dropdown">
+      <button class="language-btn">
+        {{ if eq $.Language.Lang "tr" }}TR{{ else if eq $.Language.Lang "en" }}EN{{ end }}
+        <span class="arrow">▼</span>
+      </button>
+      <div class="language-menu">
+        {{ range $.Translations }}
+        <a href="{{ .RelPermalink }}" class="language-option">
+          {{ if eq .Language.Lang "tr" }}🇹🇷 Türkçe{{ else if eq .Language.Lang "en" }}🇬🇧 English{{ end }}
+        </a>
+        {{ end }}
+      </div>
+    </div>
     {{ end }}
   </nav>
   {{ end }}
+
+  <!-- Language Dropdown Styles -->
+  <style>
+    .language-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .language-btn {
+      background: none;
+      border: 1px solid var(--theme);
+      color: var(--theme);
+      padding: 6px 12px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .language-btn:hover {
+      background: var(--theme);
+      color: var(--entry);
+    }
+    .language-btn .arrow {
+      font-size: 10px;
+      transition: transform 0.2s;
+    }
+    .language-dropdown:hover .arrow {
+      transform: rotate(180deg);
+    }
+    .language-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      margin-top: 4px;
+      background: var(--entry);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      min-width: 140px;
+      z-index: 1000;
+    }
+    .language-dropdown:hover .language-menu {
+      display: block;
+    }
+    .language-option {
+      display: block;
+      padding: 10px 16px;
+      color: var(--theme);
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+    .language-option:hover {
+      background: var(--theme);
+      color: var(--entry);
+    }
+    .language-option:first-child {
+      border-radius: 4px 4px 0 0;
+    }
+    .language-option:last-child {
+      border-radius: 0 0 4px 4px;
+    }
+  </style>
 </header>
