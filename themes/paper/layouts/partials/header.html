@@ -33,14 +33,6 @@
     {{ range . }}
     <a class="{{ if eq .URL $url }}active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
     {{ end }}
-    <!-- Language Switcher -->
-    {{ if $.IsTranslated }}
-      {{ range $.Translations }}
-      <a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}" style="margin-left: 10px;">
-        {{ if eq .Language.Lang "tr" }}🇹🇷{{ else if eq .Language.Lang "en" }}🇬🇧{{ else }}{{ .Language.LanguageName }}{{ end }}
-      </a>
-      {{ end }}
-    {{ end }}
   </nav>
   {{ end }}<!---->
 
@@ -53,6 +45,17 @@
       href="https://{{ . }}.com/{{ index site.Params . }}"
       target="_blank"
     ></a>
+    {{ end }}
+    <!-- Language Switcher -->
+    {{ if $.IsTranslated }}
+      {{ range $.Translations }}
+      <a
+        class="language-switcher"
+        href="{{ .RelPermalink }}"
+        title="Switch to {{ .Language.LanguageName }}"
+        style="font-size: 1.5em; text-decoration: none; display: inline-block;"
+      >{{ if eq .Language.Lang "tr" }}🇹🇷{{ else if eq .Language.Lang "en" }}🇬🇧{{ end }}</a>
+      {{ end }}
     {{ end }}
   </nav>
   {{ end }}
