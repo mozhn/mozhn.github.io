@@ -1,9 +1,26 @@
 {{ define "main" }}
 
-<!-- Main Title -->
-<!-- {{ if .Title }}
-<h1 class="main-title">{{ .Title }}</h1>
-{{ end }} -->
+<!-- Hero / Featured Section -->
+{{ if .IsHome }}
+<section class="hero-section">
+  <div class="hero-content">
+    <h1 class="hero-title">{{ site.Title }}</h1>
+    {{ with site.Params.description }}
+    <p class="hero-description">{{ . }}</p>
+    {{ end }}
+  </div>
+</section>
+{{ else }}
+<!-- Section Title for other pages -->
+{{ if .Title }}
+<section class="page-header">
+  <h1 class="page-title">{{ .Title }}</h1>
+  {{ with .Params.description }}
+  <p class="page-description">{{ . }}</p>
+  {{ end }}
+</section>
+{{ end }}
+{{ end }}
 
 <!-- $pages -->
 {{ $pages := union .RegularPages .Sections }}

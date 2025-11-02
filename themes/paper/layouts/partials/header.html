@@ -50,13 +50,13 @@
     {{ if $.IsTranslated }}
     <div class="language-dropdown">
       <button class="language-btn">
-        {{ if eq $.Language.Lang "tr" }}🇹🇷 Turkish{{ else if eq $.Language.Lang "en" }}🇬🇧 English{{ end }}
+        {{ if eq $.Language.Lang "tr" }}Turkish{{ else if eq $.Language.Lang "en" }}English{{ end }}
         <span class="arrow">▼</span>
       </button>
       <div class="language-menu">
         {{ range $.Translations }}
         <a href="{{ .RelPermalink }}" class="language-option">
-          {{ if eq .Language.Lang "tr" }}🇹🇷 Turkish{{ else if eq .Language.Lang "en" }}🇬🇧 English{{ end }}
+          {{ if eq .Language.Lang "tr" }}Turkish{{ else if eq .Language.Lang "en" }}English{{ end }}
         </a>
         {{ end }}
       </div>
@@ -138,6 +138,55 @@
     .language-option {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Dark mode toggle icon */
+    .btn-dark::before {
+      content: "☀️";
+      font-size: 1.2em;
+      display: inline-block;
+    }
+    body.dark .btn-dark::before {
+      content: "🌙";
+    }
+
+    /* Hero Section */
+    .hero-section {
+      text-align: center;
+      padding: 60px 20px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-title {
+      font-size: 2.5em;
+      margin-bottom: 16px;
+      font-weight: 700;
+      color: var(--theme);
+    }
+    .hero-description {
+      font-size: 1.2em;
+      color: var(--secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .page-header {
+      text-align: center;
+      padding: 40px 20px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-title {
+      font-size: 2em;
+      margin-bottom: 12px;
+      font-weight: 600;
+      color: var(--theme);
+    }
+    .page-description {
+      font-size: 1.1em;
+      color: var(--secondary);
+      max-width: 500px;
+      margin: 0 auto;
     }
   </style>
 </header>

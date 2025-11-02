@@ -12,6 +12,7 @@ defaultContentLanguage = "tr"
 
     [languages.tr.params]
       github = 'mozhn'
+      description = "Web ve mobil teknolojiler üzerine yazılar"
 
     [[languages.tr.menu.main]]
       identifier = ''
@@ -32,6 +33,7 @@ defaultContentLanguage = "tr"
 
     [languages.en.params]
       github = 'mozhn'
+      description = "Articles about web and mobile technologies"
 
     [[languages.en.menu.main]]
       identifier = ''
