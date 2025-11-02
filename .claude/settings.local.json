@@ -16,7 +16,10 @@
       "Bash(git pull:*)",
       "Bash(nslookup:*)",
       "Bash(curl:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(awk:*)",
+      "Bash(xargs kill:*)",
+      "Bash(git stash:*)"
     ],
     "deny": [],
     "ask": []

@@ -15,6 +15,6 @@ googleAnalytics = "G-QLF1P68R96"
   weight = -110
   [[menu.main]]
   identifier = 'about'
-  name = 'Hakkımda'
+  name = 'Hakkımda1'
   url = '/about/'
   weight = -100
