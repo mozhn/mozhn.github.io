@@ -13,7 +13,7 @@ defaultContentLanguage = "tr"
     [languages.tr.params]
       github = 'mozhn'
       twitter = 'elfentech'
-      description = "Web ve mobil teknolojiler üzerine yazılar"
+      description = "Ortaya karışık ilgimi ne çekerse yazıyorum ya da deniyorum"
 
     [[languages.tr.menu.main]]
       identifier = ''
@@ -35,7 +35,7 @@ defaultContentLanguage = "tr"
     [languages.en.params]
       github = 'mozhn'
       twitter = 'elfentech'
-      description = "Articles about web and mobile technologies"
+      description = "I write or experiment with whatever catches my interest"
 
     [[languages.en.menu.main]]
       identifier = ''
