@@ -107,7 +107,7 @@
       display: none;
       position: absolute;
       right: 0;
-      top: calc(100% + 6px);
+      top: calc(100% + 2px);
       background: var(--entry);
       border: 1px solid var(--border);
       border-radius: 6px;
@@ -116,7 +116,8 @@
       z-index: 1000;
       overflow: hidden;
     }
-    .language-dropdown:hover .language-menu {
+    .language-dropdown:hover .language-menu,
+    .language-menu:hover {
       display: block;
     }
     .language-option {
@@ -140,20 +141,10 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Dark mode toggle icon */
-    .btn-dark::before {
-      content: "☀️";
-      font-size: 1.2em;
-      display: inline-block;
-    }
-    body.dark .btn-dark::before {
-      content: "🌙";
-    }
-
     /* Hero Section */
     .hero-section {
-      padding: 60px 20px;
-      margin-bottom: 40px;
+      padding: 40px 20px;
+      margin-bottom: 32px;
       border-bottom: 1px solid var(--border);
     }
     .hero-profile {
@@ -161,11 +152,10 @@
       align-items: center;
       gap: 16px;
       max-width: 700px;
-      margin: 0 auto;
     }
     .hero-avatar {
-      width: 64px;
-      height: 64px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       object-fit: cover;
       flex-shrink: 0;
@@ -175,15 +165,15 @@
       flex: 1;
     }
     .hero-name {
-      font-size: 2.5em;
-      margin-bottom: 12px;
-      font-weight: 700;
+      font-size: 1.5em;
+      margin-bottom: 4px;
+      font-weight: 600;
       color: var(--theme);
     }
     .hero-bio {
-      font-size: 1.2em;
+      font-size: 0.95em;
       color: var(--secondary);
-      line-height: 1.6;
+      line-height: 1.5;
       margin: 0;
     }
     /* Responsive */
@@ -193,14 +183,14 @@
         text-align: center;
       }
       .hero-avatar {
-        width: 56px;
-        height: 56px;
+        width: 44px;
+        height: 44px;
       }
       .hero-name {
-        font-size: 2em;
+        font-size: 1.3em;
       }
       .hero-bio {
-        font-size: 1.1em;
+        font-size: 0.9em;
       }
     }
     .page-header {

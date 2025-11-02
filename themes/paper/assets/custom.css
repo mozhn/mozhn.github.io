@@ -1,4 +1,16 @@
 /* Place custom css here. */
 .btn-dark {
-  background: url(./theme.png)0/auto 3rem no-repeat !important;
+  background: none !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.btn-dark::before {
+  content: "☀️";
+}
+
+body.dark .btn-dark::before {
+  content: "🌙";
 }
