@@ -85,4 +85,33 @@
   {{ template "_internal/twitter_cards.html" . }}
   <!---->
   {{ end }}
+
+  <!-- Auto Language Detection -->
+  {{ if .IsTranslated }}
+  <script>
+    (function() {
+      // Only run on first visit (not if user manually switched language)
+      if (!sessionStorage.getItem('langPreference')) {
+        const browserLang = navigator.language || navigator.userLanguage;
+        const currentLang = '{{ .Language.Lang }}';
+        const currentPath = window.location.pathname;
+
+        // If browser is English and user is on Turkish page
+        if (browserLang.startsWith('en') && currentLang === 'tr') {
+          // Redirect to English version
+          const enPath = '/en' + currentPath;
+          sessionStorage.setItem('langPreference', 'auto-redirected');
+          window.location.href = enPath;
+        }
+        // If browser is Turkish and user is on English page
+        else if (browserLang.startsWith('tr') && currentLang === 'en') {
+          // Redirect to Turkish version
+          const trPath = currentPath.replace('/en', '');
+          sessionStorage.setItem('langPreference', 'auto-redirected');
+          window.location.href = trPath || '/';
+        }
+      }
+    })();
+  </script>
+  {{ end }}
 </head>

@@ -36,6 +36,17 @@
   </nav>
   {{ end }}<!---->
 
+  <!-- Language Switcher -->
+  {{ if .IsTranslated }}
+  <nav class="menu">
+    {{ range .Translations }}
+    <a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}">
+      {{ if eq .Language.Lang "tr" }}🇹🇷 TR{{ else if eq .Language.Lang "en" }}🇬🇧 EN{{ else }}{{ .Language.LanguageName }}{{ end }}
+    </a>
+    {{ end }}
+  </nav>
+  {{ end }}
+
   {{ with $.Scratch.Get "social-list" }}
   <nav class="social">
     {{ range . }}
