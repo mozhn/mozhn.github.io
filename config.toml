@@ -7,7 +7,7 @@ defaultContentLanguage = "tr"
   [languages.tr]
     languageCode = "tr-TR"
     languageName = "Türkçe"
-    title = "Mazlum Özhan"
+    title = "mazlum"
     weight = 1
 
     [languages.tr.params]
@@ -29,7 +29,7 @@ defaultContentLanguage = "tr"
   [languages.en]
     languageCode = "en-US"
     languageName = "English"
-    title = "Mazlum Özhan"
+    title = "mazlum"
     weight = 2
 
     [languages.en.params]
